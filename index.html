@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Mohamed Ali - Personal</title>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com/ajax/libs" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+<style>
+  :root{
+    --bg-1: #0a0a0f;
+    --bg-2: #101018;
+    --glass: rgba(255,255,255,0.04);
+    --muted: #d1d1d1;
+    --accent-start: #6a0dad;
+    --accent-end: #4facfe;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    min-height:100vh;
+    font-family: "Arial", sans-serif;
+    background: linear-gradient(180deg,var(--bg-1) 0%, var(--bg-2) 40%, #081026 100%);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:40px 18px;
+    opacity: 0;
+    animation: fadeIn 1.2s ease-out forwards;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .card{
+    width:100%;
+    max-width:880px;
+    border-radius:16px;
+    padding:36px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    backdrop-filter: blur(8px);
+    box-shadow: 0 8px 30px rgba(4,5,10,0.7);
+    transform: translateY(20px);
+    animation: cardSlideUp 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+    animation-delay: 0.3s;
+    opacity: 0;
+  }
+  
+  @keyframes cardSlideUp {
+    to { transform: translateY(0); opacity: 1; }
+  }
+
+  .header{ text-align:center; margin-bottom:28px }
+  .name{
+    font-weight:700;
+    font-size:3rem;
+    line-height:1;
+    display:inline-block;
+    padding-bottom:8px;
+    background: linear-gradient(90deg,var(--accent-start), var(--accent-end));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position:relative;
+    text-shadow: 0 4px 16px rgba(10,10,20,0.5);
+  }
+  .name-orn{
+    display:block;
+    font-size:0.95rem;
+    margin-top:8px;
+    color:rgba(255,255,255,0.85);
+    opacity:0.9;
+  }
+
+  .about-section {
+    margin: 28px 0;
+    padding: 20px;
+    background: var(--glass);
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.03);
+    text-align: center;
+    animation: fadeIn 0.8s ease-out forwards;
+    animation-delay: 0.6s;
+    opacity: 0;
+  }
+  
+  .about-title {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+    background: linear-gradient(90deg, var(--accent-start), var(--accent-end));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 600;
+  }
+  
+  .about-text {
+    line-height: 1.6;
+    color: var(--muted);
+    max-width: 600px;
+    margin: 0 auto;
+    font-weight:500;
+    font-size:1.1rem;
+  }
+
+  .social-row{
+    display:flex;
+    gap:18px;
+    justify-content:center;
+    flex-wrap:wrap;
+    margin-bottom:28px;
+  }
+
+  .social{
+    --pad:18px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding: var(--pad);
+    min-width:130px;
+    border-radius:12px;
+    background: var(--glass);
+    border:1px solid rgba(255,255,255,0.03);
+    text-decoration:none;
+    color:var(--muted);
+    transition: transform .4s cubic-bezier(.2,.9,.3,1), background .4s;
+    position:relative;
+    overflow:visible;
+    opacity: 0;
+    transform: translateY(15px);
+    animation: socialAppear 0.5s ease-out forwards;
+  }
+  
+  .social:nth-child(1) { animation-delay: 0.7s; }
+  .social:nth-child(2) { animation-delay: 0.8s; }
+  .social:nth-child(3) { animation-delay: 0.9s; }
+  .social:nth-child(4) { animation-delay: 1.0s; }
+  .social:nth-child(5) { animation-delay: 1.1s; }
+  
+  @keyframes socialAppear {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .social i{
+    font-size:1.9rem;
+    width:40px;
+    height:40px;
+    display:grid;
+    place-items:center;
+    transition: transform .4s cubic-bezier(.2,.9,.3,1), filter .4s;
+    color: currentColor;
+  }
+
+  .social span{
+    font-weight:600;
+    color: #ffffff;
+    opacity:0.95;
+    letter-spacing:0.2px;
+  }
+
+  .s-telegram { color: #0088cc; }
+  .s-whatsapp { color: #25d366; }
+  .s-instagram { color: #e4405f; }
+  .s-facebook { color: #1877f2; }
+  .s-snapchat { color: #fffc00; filter: drop-shadow(0 0 0 rgba(0,0,0,0)); }
+
+  .social:hover{
+    transform: translateY(-8px) scale(1.04);
+    background: rgba(255,255,255,0.045);
+  }
+  .social:hover i {
+    animation: iconPulseSmooth 0.7s ease-in-out both;
+    filter: drop-shadow(0 6px 18px rgba(0,0,0,0.4));
+  }
+
+  @keyframes iconPulseSmooth {
+    0%   { transform: translateY(0) scale(1) rotate(0deg); }
+    25%  { transform: translateY(-3px) scale(1.08) rotate(2deg); }
+    50%  { transform: translateY(-6px) scale(1.12) rotate(-2deg); }
+    75%  { transform: translateY(-3px) scale(1.08) rotate(1deg); }
+    100% { transform: translateY(0) scale(1) rotate(0deg); }
+  }
+
+  .footer{
+    text-align:center;
+    margin-top:6px;
+    padding:18px 12px 8px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border-radius:10px;
+    border: 1px solid rgba(255,255,255,0.03);
+    margin-top:18px;
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out forwards;
+    animation-delay: 1.2s;
+  }
+  .footer .line1{
+    color: #d1d1d1;
+    font-size:0.98rem;
+    font-weight:500;
+    margin-bottom:6px;
+  }
+  .footer .line2{
+    color: #cda8ff;
+    font-size:0.9rem;
+    font-weight:400;
+    letter-spacing:0.4px;
+  }
+
+  @media (max-width:640px){
+    .name{ font-size:2.1rem }
+    .social{ min-width:96px; padding:12px; gap:8px }
+    .social i{ font-size:1.6rem; width:34px; height:34px }
+    .card{ padding:22px }
+  }
+</style>
+</head>
+<body>
+
+  <div class="card" role="main">
+    <div class="header">
+      <div class="name">Mohamed Ali</div>
+      <div class="name-orn" style="margin-top:8px">Welcome — Connect with me easily</div>
+    </div>
+    
+    <section class="about-section" aria-labelledby="about-title">
+      <h2 id="about-title" class="about-title">My Motto</h2>
+      <p class="about-text">
+        Step by step to greatness
+      </p>
+    </section>
+
+    <nav class="social-row" aria-label="Social Links">
+      <a class="social s-telegram" href="https://t.me/BTJCM" target="_blank" rel="noopener" aria-label="Telegram">
+        <i class="fab fa-telegram"></i><span>Telegram</span>
+      </a>
+
+      <a class="social s-whatsapp" href="https://wa.me/201005795787" target="_blank" rel="noopener" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i><span>WhatsApp</span>
+      </a>
+
+      <a class="social s-instagram" href="https://instagram.com/moham_ed_ali01" target="_blank" rel="noopener" aria-label="Instagram">
+        <i class="fab fa-instagram"></i><span>Instagram</span>
+      </a>
+
+      <a class="social s-facebook" href="https://facebook.com/share/1GQWTJCDGx/" target="_blank" rel="noopener" aria-label="Facebook">
+        <i class="fab fa-facebook"></i><span>Facebook</span>
+      </a>
+
+      <a class="social s-snapchat" href="https://snapchat.com/add/x1166349" target="_blank" rel="noopener" aria-label="Snapchat">
+        <i class="fab fa-snapchat"></i><span>Snapchat</span>
+      </a>
+    </nav>
+
+    <footer class="footer" role="contentinfo">
+      <div class="line1">تم تصميم الموقع بواسطة Mohamed Ali 2025 &copy; جميع الحقوق محفوظة</div>
+      <div class="line2">Made with love 💜</div>
+    </footer>
+  </div>
+
+</body>
+</html>
