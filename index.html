@@ -6,13 +6,14 @@
 <title>Mohamed Ali - Personal</title>
 <link rel="preconnect" href="https://cdnjs.cloudflare.com/ajax/libs" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Tajawal:wght@700&display=swap" rel="stylesheet">
 <style>
   :root{
     --bg-1: #0a0a0f;
     --bg-2: #101018;
     --glass: rgba(255,255,255,0.04);
     --muted: #d1d1d1;
-    --accent-start: #6a0dad;
+    --accent-start: #a259ff;
     --accent-end: #4facfe;
   }
 
@@ -54,19 +55,19 @@
   }
 
   .header{ text-align:center; margin-bottom:28px }
+
   .name{
+    font-family: 'Poppins', 'Tajawal', sans-serif;
     font-weight:700;
-    font-size:3rem;
-    line-height:1;
-    display:inline-block;
-    padding-bottom:8px;
+    font-size:3.4rem;
+    letter-spacing:1px;
     background: linear-gradient(90deg,var(--accent-start), var(--accent-end));
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    position:relative;
-    text-shadow: 0 4px 16px rgba(10,10,20,0.5);
+    text-shadow: 0 4px 14px rgba(162,89,255,0.55);
   }
+
   .name-orn{
     display:block;
     font-size:0.95rem;
@@ -99,11 +100,11 @@
   
   .about-text {
     line-height: 1.6;
-    color: var(--muted);
     max-width: 600px;
     margin: 0 auto;
-    font-weight:500;
-    font-size:1.1rem;
+    font-weight:600;
+    font-size:1.2rem;
+    color:#c77dff;
   }
 
   .social-row{
@@ -126,7 +127,7 @@
     border:1px solid rgba(255,255,255,0.03);
     text-decoration:none;
     color:var(--muted);
-    transition: transform .4s cubic-bezier(.2,.9,.3,1), background .4s;
+    transition: transform .4s cubic-bezier(.2,.9,.3,1), background .4s, box-shadow .4s;
     position:relative;
     overflow:visible;
     opacity: 0;
@@ -150,8 +151,8 @@
     height:40px;
     display:grid;
     place-items:center;
-    transition: transform .4s cubic-bezier(.2,.9,.3,1), filter .4s;
     color: currentColor;
+    transition: transform .4s;
   }
 
   .social span{
@@ -167,21 +168,20 @@
   .s-facebook { color: #1877f2; }
   .s-snapchat { color: #fffc00; filter: drop-shadow(0 0 0 rgba(0,0,0,0)); }
 
-  .social:hover{
-    transform: translateY(-8px) scale(1.04);
-    background: rgba(255,255,255,0.045);
-  }
-  .social:hover i {
-    animation: iconPulseSmooth 0.7s ease-in-out both;
-    filter: drop-shadow(0 6px 18px rgba(0,0,0,0.4));
+  @keyframes floatIcon {
+    0%   { transform: translateY(0) scale(1); }
+    50%  { transform: translateY(-6px) scale(1.05); }
+    100% { transform: translateY(0) scale(1); }
   }
 
-  @keyframes iconPulseSmooth {
-    0%   { transform: translateY(0) scale(1) rotate(0deg); }
-    25%  { transform: translateY(-3px) scale(1.08) rotate(2deg); }
-    50%  { transform: translateY(-6px) scale(1.12) rotate(-2deg); }
-    75%  { transform: translateY(-3px) scale(1.08) rotate(1deg); }
-    100% { transform: translateY(0) scale(1) rotate(0deg); }
+  .social:hover {
+    transform: translateY(-8px) scale(1.04);
+    background: rgba(255,255,255,0.06);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  }
+
+  .social:hover i {
+    animation: floatIcon 1.6s ease-in-out infinite;
   }
 
   .footer{
@@ -221,14 +221,14 @@
 
   <div class="card" role="main">
     <div class="header">
-      <div class="name">Mohamed Ali</div>
+      <div class="name">ᎷᏫᎻᎯ ᎷᎬᎠ Ꭿ ᏞᎥ</div>
       <div class="name-orn" style="margin-top:8px">Welcome — Connect with me easily</div>
     </div>
     
     <section class="about-section" aria-labelledby="about-title">
-      <h2 id="about-title" class="about-title">My Motto</h2>
+      <h2 id="about-title" class="about-title">𝐌𝐲 𝐬𝐭𝐚𝐭𝐮𝐬</h2>
       <p class="about-text">
-        Step by step to greatness
+        『 طــالــب ثــانــوي عــام 🫩 』
       </p>
     </section>
 
@@ -236,19 +236,15 @@
       <a class="social s-telegram" href="https://t.me/BTJCM" target="_blank" rel="noopener" aria-label="Telegram">
         <i class="fab fa-telegram"></i><span>Telegram</span>
       </a>
-
       <a class="social s-whatsapp" href="https://wa.me/201005795787" target="_blank" rel="noopener" aria-label="WhatsApp">
         <i class="fab fa-whatsapp"></i><span>WhatsApp</span>
       </a>
-
       <a class="social s-instagram" href="https://instagram.com/moham_ed_ali01" target="_blank" rel="noopener" aria-label="Instagram">
         <i class="fab fa-instagram"></i><span>Instagram</span>
       </a>
-
       <a class="social s-facebook" href="https://facebook.com/share/1GQWTJCDGx/" target="_blank" rel="noopener" aria-label="Facebook">
         <i class="fab fa-facebook"></i><span>Facebook</span>
       </a>
-
       <a class="social s-snapchat" href="https://snapchat.com/add/x1166349" target="_blank" rel="noopener" aria-label="Snapchat">
         <i class="fab fa-snapchat"></i><span>Snapchat</span>
       </a>
